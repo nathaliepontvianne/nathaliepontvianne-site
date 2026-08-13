@@ -153,8 +153,10 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 }
 
 .hero-info-card h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--dark);
   margin: 0 0 6px;
 }
@@ -191,10 +193,6 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
   color: var(--grey);
 }
 
-.hero-cta {
-  margin-top: 30px;
-}
-
 .btn {
   display: inline-block;
   background: var(--primary);
@@ -220,25 +218,16 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 .hero-social {
   margin-top: 40px;
   background: rgba(48,46,46,0.55);
-  padding: 18px 0;
+  padding: 22px 0;
 }
 
 .hero-social .wrap {
   display: flex;
   justify-content: center;
-  gap: 22px;
 }
 
-.hero-social a {
-  color: var(--white);
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-.hero-social a:hover { opacity: 1; color: var(--primary); text-decoration: none; }
+.hero-social .btn { opacity: 0.96; }
+.hero-social .btn:hover { opacity: 1; }
 
 /* ===== Section titles ===== */
 .section-title-wrap {
@@ -247,12 +236,13 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 }
 
 .section-title {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--dark);
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
 }
 
 .section-title::after {
@@ -267,7 +257,7 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 main section { padding-bottom: 30px; }
 
 /* ===== Timeline (Expérience / Formation) ===== */
-.timeline { padding-bottom: 60px; }
+.timeline { padding-bottom: 60px; overflow: hidden; }
 
 .timeline-row {
   display: grid;
@@ -289,9 +279,9 @@ main section { padding-bottom: 30px; }
 
 .timeline-row .role-label {
   display: block;
-  font-size: 0.8rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--primary-dark);
   margin-bottom: 6px;
@@ -318,18 +308,16 @@ main section { padding-bottom: 30px; }
   background: rgba(112, 111, 111, 0.28);
 }
 
-.timeline-row:last-child .dot::before { display: none; }
-
 /* Separation between Expérience and Formation */
 #formation {
   background: var(--sand);
-  border-top: 1px solid var(--sand-line);
+  border-top: 3px solid var(--primary);
 }
 
 .timeline-row h3 {
-  font-size: 1.02rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 10px;
   color: var(--dark);
@@ -392,12 +380,20 @@ main section { padding-bottom: 30px; }
   margin: 0 0 14px;
 }
 
-.expertise-grid .item span.rule {
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--primary);
-  margin: 0 auto 16px;
+.expertise-grid .item .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: rgba(200, 170, 140, 0.14);
+  color: var(--primary-dark);
+}
+.expertise-grid .item .icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .expertise-grid .item p {
