@@ -11,7 +11,577 @@
   --primary-dark: #A6835F;
   --grey: #706F6F;
   --dark: #302E2E;
+  --white: #FFFFFF;@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('../fonts/TTNormsPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('../fonts/TTNormsPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('../fonts/TTNormsPro-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --primary: #C8AA8C;
+  --primary-dark: #A6835F;
+  --grey: #706F6F;
+  --dark: #302E2E;
   --white: #FFFFFF;
+  --sand: #F5F0E9;
+  --sand-line: #E9E0D3;
+  --max-width: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+h1, h2, h3, .brand, nav a, .section-title, .role-label {
+  font-family: 'Raleway', sans-serif;
+}
+
+a { color: var(--primary-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Work-in-progress banner */
+.wip-banner {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Header / nav */
+header.site-header {
+  background: var(--white);
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--sand-line);
+}
+
+header.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.brand {
+  color: var(--dark);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand span {
+  display: block;
+  font-family: 'TT Norms Pro', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 400;
+  color: var(--grey);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(48,46,46,0.88), rgba(166,131,95,0.75)), url('../assets/photo-hero.jpg') center/cover no-repeat;
+  padding: 70px 0 0;
+}
+
+.hero-cards {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-photo-card {
+  width: 340px;
+  height: 400px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.hero-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.hero-info-card {
+  flex: 1 1 320px;
+  background: rgba(245, 240, 233, 0.94);
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.hero-info-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px;
+}
+
+.hero-info-card .title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  margin: 0 0 28px;
+}
+
+.hero-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+}
+
+.hero-facts .fact .label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.hero-facts .fact div,
+.hero-facts .fact a {
+  font-size: 0.92rem;
+  color: var(--grey);
+}
+
+.hero-cta {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 13px 26px;
+  border-radius: 2px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn:hover { background: var(--primary-dark); text-decoration: none; }
+
+.btn.secondary {
+  background: transparent;
+  border: 1.5px solid var(--dark);
+  color: var(--dark);
+}
+.btn.secondary:hover { background: var(--dark); color: var(--white); }
+
+.hero-social {
+  margin-top: 40px;
+  background: rgba(48,46,46,0.55);
+  padding: 18px 0;
+}
+
+.hero-social .wrap {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.hero-social a {
+  color: var(--white);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.hero-social a:hover { opacity: 1; color: var(--primary); text-decoration: none; }
+
+/* ===== Section titles ===== */
+.section-title-wrap {
+  text-align: center;
+  padding: 64px 0 30px;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin: 0 0 20px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  background: var(--primary);
+  margin: 18px auto 0;
+}
+
+main section { padding-bottom: 30px; }
+
+/* ===== Timeline (Expérience / Formation) ===== */
+.timeline { padding-bottom: 60px; }
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 150px 20px 1fr;
+  gap: 0 24px;
+  max-width: 920px;
+  margin: 0 auto 44px;
+}
+
+.timeline-row .date {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--dark);
+  text-align: right;
+  padding-top: 2px;
+}
+
+.timeline-row .role-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.timeline-row .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 6px;
+  justify-self: center;
+  position: relative;
+}
+
+.timeline-row .dot::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 130px;
+  background: var(--sand-line);
+}
+
+.timeline-row:last-child .dot::before { display: none; }
+
+.timeline-row h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: var(--dark);
+}
+
+.timeline-row ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--grey);
+  font-weight: 300;
+}
+.timeline-row li { margin-bottom: 4px; }
+
+/* ===== Aptitudes (dark full-bleed) ===== */
+.aptitudes {
+  background:
+    repeating-linear-gradient(135deg, rgba(200,170,140,0.06) 0px, rgba(200,170,140,0.06) 1px, transparent 1px, transparent 60px),
+    var(--dark);
+  padding-bottom: 70px;
+}
+
+.aptitudes .section-title { color: var(--white); }
+
+.aptitudes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.aptitudes-grid .tag {
+  background: rgba(245, 240, 233, 0.1);
+  border: 1px solid rgba(245, 240, 233, 0.18);
+  color: var(--white);
+  text-align: center;
+  padding: 18px 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+/* ===== Expertise ===== */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1020px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.expertise-grid .item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin: 0 0 14px;
+}
+
+.expertise-grid .item span.rule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  margin: 0 auto 16px;
+}
+
+.expertise-grid .item p {
+  color: var(--grey);
+  font-weight: 300;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ===== Contact ===== */
+.contact {
+  background: var(--sand);
+  padding-bottom: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--sand-line);
+  background: var(--white);
+  padding: 12px 14px;
+  font-family: 'TT Norms Pro', sans-serif;
+  font-size: 0.92rem;
+  color: var(--dark);
+}
+
+.contact-form textarea { min-height: 110px; resize: vertical; }
+
+.contact-form button {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  background: var(--dark);
+  color: var(--white);
+  padding: 13px 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.contact-form button:hover { background: var(--primary-dark); }
+
+.contact-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 4px;
+}
+
+.contact-info .title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  margin: 0 0 26px;
+}
+
+.contact-info .fact { margin-bottom: 18px; }
+.contact-info .fact .label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.contact-info .fact div, .contact-info .fact a { color: var(--grey); font-size: 0.92rem; }
+
+.contact-info .social-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--sand-line);
+  flex-wrap: wrap;
+}
+.contact-info .social-links a {
+  color: var(--dark);
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--dark);
+  padding: 8px 16px;
+}
+.contact-info .social-links a:hover { background: var(--dark); color: var(--white); text-decoration: none; }
+
+/* ===== Footer ===== */
+footer {
+  background: var(--dark);
+  color: var(--sand);
+  padding: 26px 0;
+  font-size: 0.82rem;
+}
+
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+footer a { color: var(--sand); }
+footer a:hover { color: var(--primary); }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 760px) {
+  .hero { padding-top: 40px; }
+  .hero-cards { flex-direction: column; }
+  .hero-photo-card { width: 100%; height: 300px; }
+  .hero-info-card { padding: 36px 28px; }
+  .hero-facts { grid-template-columns: 1fr; }
+  .timeline-row {
+    display: block;
+    grid-template-columns: none;
+    border-left: 2px solid var(--sand-line);
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+  .timeline-row .date { text-align: left; }
+  .timeline-row .role-label { text-align: left; }
+  .timeline-row .dot { display: none; }
+  .timeline-row h3 { margin-top: 10px; }
+  .aptitudes-grid { grid-template-columns: 1fr; }
+  nav ul { gap: 16px; }
+  footer .wrap { flex-direction: column; text-align: center; }
+}
+
   --sand: #F5F0E9;
   --max-width: 1080px;
 }
