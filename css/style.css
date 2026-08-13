@@ -217,17 +217,22 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 
 .hero-social {
   margin-top: 40px;
-  background: rgba(48,46,46,0.55);
+}
+
+.hero-social a {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
   padding: 22px 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-
-.hero-social .wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-social .btn { opacity: 0.96; }
-.hero-social .btn:hover { opacity: 1; }
+.hero-social a:hover { background: var(--primary-dark); text-decoration: none; }
 
 /* ===== Section titles ===== */
 .section-title-wrap {
@@ -254,10 +259,10 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
   margin: 18px auto 0;
 }
 
-main section { padding-bottom: 30px; }
+main section { padding-bottom: 64px; }
 
 /* ===== Timeline (Expérience / Formation) ===== */
-.timeline { padding-bottom: 60px; overflow: hidden; }
+.timeline { overflow: hidden; }
 
 .timeline-row {
   display: grid;
@@ -314,6 +319,16 @@ main section { padding-bottom: 30px; }
   border-top: 3px solid var(--primary);
 }
 
+/* In Formation, the diploma name should read bigger than the diploma type */
+#formation .role-label {
+  font-size: 0.8rem;
+  color: var(--dark);
+}
+#formation h3 {
+  font-size: 1.02rem;
+  color: var(--primary-dark);
+}
+
 .timeline-row h3 {
   font-size: 0.8rem;
   font-weight: 700;
@@ -331,30 +346,28 @@ main section { padding-bottom: 30px; }
 }
 .timeline-row li { margin-bottom: 4px; }
 
-/* ===== Aptitudes (dark full-bleed) ===== */
-.aptitudes {
-  background:
-    repeating-linear-gradient(135deg, rgba(200,170,140,0.06) 0px, rgba(200,170,140,0.06) 1px, transparent 1px, transparent 60px),
-    var(--dark);
-  padding-bottom: 70px;
+/* ===== Compétences (full-bleed, airy) ===== */
+.competences {
+  background: var(--grey);
 }
 
-.aptitudes .section-title { color: var(--white); }
+.competences .section-title { color: var(--white); }
+.competences .section-title::after { background: var(--sand); }
 
-.aptitudes-grid {
+.competences-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 24px;
   max-width: 920px;
   margin: 0 auto;
 }
 
-.aptitudes-grid .tag {
-  background: rgba(245, 240, 233, 0.1);
-  border: 1px solid rgba(245, 240, 233, 0.18);
+.competences-grid .tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   text-align: center;
-  padding: 18px 20px;
+  padding: 22px 24px;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
@@ -406,7 +419,6 @@ main section { padding-bottom: 30px; }
 /* ===== Contact ===== */
 .contact {
   background: var(--sand);
-  padding-bottom: 0;
 }
 
 .contact-grid {
@@ -415,7 +427,6 @@ main section { padding-bottom: 30px; }
   gap: 60px;
   max-width: 1020px;
   margin: 0 auto;
-  padding-bottom: 70px;
 }
 
 .contact-form {
@@ -553,7 +564,7 @@ footer a:hover { color: var(--primary); }
   .timeline-row .date { text-align: left; }
   .timeline-row .dot { display: none; }
   .timeline-row h3 { margin-top: 10px; }
-  .aptitudes-grid { grid-template-columns: 1fr; }
+  .competences-grid { grid-template-columns: 1fr; }
   nav ul { gap: 16px; }
   footer .wrap { flex-direction: column; text-align: center; }
 }
