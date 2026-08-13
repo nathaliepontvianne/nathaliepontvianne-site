@@ -59,17 +59,6 @@ img { max-width: 100%; display: block; }
   padding: 0 32px;
 }
 
-/* Work-in-progress banner */
-.wip-banner {
-  background: var(--primary);
-  color: var(--white);
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
 /* Header / nav */
 header.site-header {
   background: var(--white);
@@ -151,7 +140,6 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
 }
 
 .hero-info-card {
@@ -301,12 +289,12 @@ main section { padding-bottom: 30px; }
 
 .timeline-row .role-label {
   display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--grey);
-  text-align: right;
-  margin-top: 4px;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
 }
 
 .timeline-row .dot {
@@ -327,10 +315,16 @@ main section { padding-bottom: 30px; }
   transform: translateX(-50%);
   width: 1px;
   height: 130px;
-  background: var(--sand-line);
+  background: rgba(112, 111, 111, 0.28);
 }
 
 .timeline-row:last-child .dot::before { display: none; }
+
+/* Separation between Expérience and Formation */
+#formation {
+  background: var(--sand);
+  border-top: 1px solid var(--sand-line);
+}
 
 .timeline-row h3 {
   font-size: 1.02rem;
@@ -382,9 +376,9 @@ main section { padding-bottom: 30px; }
 /* ===== Expertise ===== */
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1020px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 64px;
+  max-width: 820px;
   margin: 0 auto;
   text-align: center;
 }
@@ -561,7 +555,6 @@ footer a:hover { color: var(--primary); }
     margin-bottom: 36px;
   }
   .timeline-row .date { text-align: left; }
-  .timeline-row .role-label { text-align: left; }
   .timeline-row .dot { display: none; }
   .timeline-row h3 { margin-top: 10px; }
   .aptitudes-grid { grid-template-columns: 1fr; }
