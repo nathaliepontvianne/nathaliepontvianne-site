@@ -295,3 +295,14 @@ footer .social-links a:hover {
   .hero-photo { margin: 0 auto; }
   footer .wrap { flex-direction: column; text-align: center; }
 }
+
+/* Work-in-progress banner */
+.wip-banner {
+  background: var(--terracotta);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
