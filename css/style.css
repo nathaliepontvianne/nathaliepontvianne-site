@@ -78,10 +78,16 @@ header.site-header .wrap {
 }
 
 .brand {
+  display: block;
   color: var(--dark);
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.brand-logo {
+  height: 52px;
+  width: auto;
 }
 
 .brand span {
@@ -92,7 +98,7 @@ header.site-header .wrap {
   color: var(--grey);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 3px;
+  margin-top: 6px;
 }
 
 nav ul {
@@ -265,12 +271,25 @@ main section { padding-bottom: 64px; }
 .timeline { overflow: hidden; }
 
 .timeline-row {
+  position: relative;
   display: grid;
   grid-template-columns: 150px 20px 1fr;
   gap: 0 24px;
   max-width: 920px;
   margin: 0 auto 44px;
 }
+
+.timeline-row::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 184px;
+  width: 1px;
+  height: calc(100% + 35px);
+  background: rgba(112, 111, 111, 0.28);
+}
+
+.timeline-row:last-child::before { height: 100%; }
 
 .timeline-row .date {
   font-family: 'Raleway', sans-serif;
@@ -302,21 +321,9 @@ main section { padding-bottom: 64px; }
   position: relative;
 }
 
-.timeline-row .dot::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 130px;
-  background: rgba(112, 111, 111, 0.28);
-}
-
 /* Separation between Expérience and Formation */
 #formation {
   background: var(--sand);
-  border-top: 3px solid var(--primary);
 }
 
 /* In Formation, the diploma name should read bigger than the diploma type */
@@ -348,11 +355,11 @@ main section { padding-bottom: 64px; }
 
 /* ===== Compétences (full-bleed, airy) ===== */
 .competences {
-  background: var(--grey);
+  background: var(--primary-dark);
 }
 
 .competences .section-title { color: var(--white); }
-.competences .section-title::after { background: var(--sand); }
+.competences .section-title::after { background: var(--white); }
 
 .competences-grid {
   display: grid;
@@ -381,7 +388,7 @@ main section { padding-bottom: 64px; }
   gap: 48px 64px;
   max-width: 820px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .expertise-grid .item h3 {
@@ -399,7 +406,7 @@ main section { padding-bottom: 64px; }
   justify-content: center;
   width: 46px;
   height: 46px;
-  margin: 0 auto 18px;
+  margin: 0 0 18px;
   border-radius: 50%;
   background: rgba(200, 170, 140, 0.14);
   color: var(--primary-dark);
@@ -563,6 +570,7 @@ footer a:hover { color: var(--primary); }
   }
   .timeline-row .date { text-align: left; }
   .timeline-row .dot { display: none; }
+  .timeline-row::before { display: none; }
   .timeline-row h3 { margin-top: 10px; }
   .competences-grid { grid-template-columns: 1fr; }
   nav ul { gap: 16px; }
