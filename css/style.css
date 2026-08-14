@@ -28,6 +28,7 @@
   --white: #FFFFFF;
   --sand: #F5F0E9;
   --sand-line: #E9E0D3;
+  --brown-deep: #4A3728;
   --max-width: 1180px;
 }
 
@@ -90,17 +91,6 @@ header.site-header .wrap {
   width: auto;
 }
 
-.brand span {
-  display: block;
-  font-family: 'TT Norms Pro', sans-serif;
-  font-size: 0.66rem;
-  font-weight: 400;
-  color: var(--grey);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -123,7 +113,7 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, rgba(48,46,46,0.88), rgba(166,131,95,0.75)), url('../assets/photo-hero.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(48,46,46,0.88), rgba(166,131,95,0.75)), url('../assets/hero-bg.jpg') center/cover no-repeat;
   padding: 70px 0 0;
 }
 
@@ -355,7 +345,7 @@ main section { padding-bottom: 64px; }
 
 /* ===== Compétences (full-bleed, airy) ===== */
 .competences {
-  background: var(--primary-dark);
+  background: linear-gradient(rgba(74, 55, 40, 0.92), rgba(74, 55, 40, 0.92)), url('../assets/competences-bg.jpg') center/cover no-repeat;
 }
 
 .competences .section-title { color: var(--white); }
@@ -364,21 +354,30 @@ main section { padding-bottom: 64px; }
 .competences-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 920px;
+  gap: 20px 56px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
 .competences-grid .tag {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
   color: var(--white);
-  text-align: center;
-  padding: 22px 24px;
+  text-align: left;
+  padding: 2px 0 2px 28px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.competences-grid .tag::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 14px;
+  height: 1px;
+  background: var(--primary);
 }
 
 /* ===== Expertise ===== */
