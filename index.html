@@ -9,6 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { 'analytics_storage': 'denied' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CS874R4XL4"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-CS874R4XL4');
+</script>
 </head>
 <body>
 
@@ -140,7 +150,6 @@
     </div>
     <div class="wrap timeline">
 
-    
       <div class="timeline-row">
         <div class="date">2026</div>
         <div class="dot"></div>
@@ -155,7 +164,8 @@
           </ul>
         </div>
       </div>
-<div class="timeline-row">
+
+      <div class="timeline-row">
         <div class="date">2023</div>
         <div class="dot"></div>
         <div>
@@ -299,6 +309,35 @@
     <div>nathalie.pontvianne21@gmail.com</div>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Ce site utilise des cookies de mesure d'audience (Google Analytics) pour améliorer votre expérience. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">En savoir plus</a>.</p>
+  <div class="cookie-banner-actions">
+    <button type="button" id="cookieDecline">Refuser</button>
+    <button type="button" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var banner = document.getElementById('cookieBanner');
+  var choice = localStorage.getItem('cookie_consent');
+  if(!choice){
+    banner.style.display = 'flex';
+  } else if(choice === 'granted'){
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    localStorage.setItem('cookie_consent', 'granted');
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    banner.style.display = 'none';
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function(){
+    localStorage.setItem('cookie_consent', 'denied');
+    banner.style.display = 'none';
+  });
+})();
+</script>
 
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e){
