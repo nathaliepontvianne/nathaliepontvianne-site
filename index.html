@@ -264,26 +264,6 @@
       <div class="section-title">Contact</div>
     </div>
     <div class="wrap contact-grid">
-      <form class="contact-form" id="contactForm">
-        <div>
-          <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" name="prenom" required>
-        </div>
-        <div>
-          <label for="nom">Nom</label>
-          <input type="text" id="nom" name="nom" required>
-        </div>
-        <div>
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
-
       <div class="contact-info">
         <h3>Nathalie Pontvianne</h3>
         <p class="title">Communication • Webmarketing • Gestion administrative</p>
@@ -362,19 +342,6 @@
     banner.style.display = 'none';
   });
 })();
-</script>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  var prenom = document.getElementById('prenom').value;
-  var nom = document.getElementById('nom').value;
-  var email = document.getElementById('email').value;
-  var message = document.getElementById('message').value;
-  var subject = encodeURIComponent('Contact depuis le site : ' + prenom + ' ' + nom);
-  var body = encodeURIComponent(message + '\n\nRépondre à : ' + email);
-  window.location.href = 'mailto:nathalie.pontvianne21@gmail.com?subject=' + subject + '&body=' + body;
-});
 </script>
 
 </body>
