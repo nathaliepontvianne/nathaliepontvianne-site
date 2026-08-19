@@ -110,6 +110,28 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
@@ -311,7 +333,7 @@ main section { padding-bottom: 64px; }
   position: relative;
 }
 
-/* Separation between Expérience et Formation */
+/* Separation between Expérience and Formation */
 #formation {
   background: var(--sand);
 }
@@ -578,8 +600,35 @@ footer a:hover { color: var(--primary); }
   .timeline-row::before { display: none; }
   .timeline-row h3 { margin-top: 10px; }
   .competences-grid { grid-template-columns: 1fr; }
-  nav ul { gap: 16px; }
   footer .wrap { flex-direction: column; text-align: center; }
+
+  .nav-toggle { display: flex; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  header.site-header .wrap { position: relative; }
+
+  nav#siteNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--sand-line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  nav#siteNav.open { max-height: 400px; }
+  nav#siteNav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 32px 20px;
+  }
+  nav#siteNav ul li { border-bottom: 1px solid var(--sand-line); }
+  nav#siteNav ul li:last-child { border-bottom: none; }
+  nav#siteNav ul li a { display: block; padding: 14px 0; }
 }
 
 /* ===== Cookie banner ===== */
