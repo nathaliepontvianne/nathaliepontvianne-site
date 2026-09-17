@@ -190,6 +190,15 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
   margin: 0 0 28px;
 }
 
+.hero-info-card .bio {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--grey);
+  margin: 0 0 28px;
+  max-width: 620px;
+}
+
 .hero-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -540,7 +549,7 @@ footer a:hover { color: var(--primary); }
   .hero { padding-top: 40px; }
   .hero-cards { flex-direction: column; }
   .hero-photo-card { width: 100%; height: 300px; }
-.hero-info-card { padding: 36px 28px; flex: none; min-height: auto; }
+  .hero-info-card { padding: 36px 28px; }
   .hero-facts { grid-template-columns: 1fr; }
   .timeline-row {
     display: block;
