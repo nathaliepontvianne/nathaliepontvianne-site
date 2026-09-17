@@ -148,8 +148,8 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 }
 
 .hero-photo-card {
-  width: 340px;
-  height: 400px;
+  width: 400px;
+  height: 460px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -168,7 +168,7 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 400px;
+  min-height: 460px;
 }
 
 .hero-info-card h1 {
@@ -343,7 +343,7 @@ main section { padding-bottom: 64px; }
   position: relative;
 }
 
-/* Separation between Expérience and Formation */
+/* Separation between Expérience et Formation */
 #formation {
   background: var(--sand);
 }
