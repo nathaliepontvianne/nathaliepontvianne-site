@@ -244,15 +244,26 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 
 .hero-social {
   margin-top: 40px;
+  display: flex;
+}
+
+.hero-social a + a { border-left: 1px solid rgba(255, 255, 255, 0.5); }
+
+.hero-social a span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
 }
 
 .hero-social a {
   display: block;
-  width: 100%;
+  flex: 1 1 0;
   background: var(--primary);
   color: var(--white);
   text-align: center;
-  padding: 22px 0;
+  padding: 22px 12px;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
@@ -551,6 +562,8 @@ footer a:hover { color: var(--primary); }
     .hero-info-card { flex: none; width: 100%; padding: 36px 28px; min-height: 0; justify-content: flex-start; }
   .hero-info-card .bio { max-width: none; }
   .hero-facts { grid-template-columns: 1fr; }
+  .hero-social { flex-direction: column; }
+  .hero-social a + a { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.5); }
   .timeline-row {
     display: block;
     grid-template-columns: none;
