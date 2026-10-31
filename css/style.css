@@ -444,6 +444,20 @@ main section { padding-bottom: 64px; }
   margin: 0 auto;
 }
 
+.competences-grid .group-title {
+  grid-column: 1 / -1;
+  margin-top: 22px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.competences-grid .group-title:first-child { margin-top: 0; }
+
 .competences-grid .tag {
   position: relative;
   color: var(--white);
