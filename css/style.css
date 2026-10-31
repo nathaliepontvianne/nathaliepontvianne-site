@@ -245,9 +245,10 @@ nav a:hover, nav a.active { color: var(--primary-dark); text-decoration: none; }
 .hero-social {
   margin-top: 40px;
   display: flex;
+  flex-direction: column;
 }
 
-.hero-social a + a { border-left: 1px solid rgba(255, 255, 255, 0.5); }
+.hero-social a + a { border-top: 1px solid rgba(255, 255, 255, 0.5); }
 
 .hero-social a span {
   display: block;
@@ -562,8 +563,6 @@ footer a:hover { color: var(--primary); }
     .hero-info-card { flex: none; width: 100%; padding: 36px 28px; min-height: 0; justify-content: flex-start; }
   .hero-info-card .bio { max-width: none; }
   .hero-facts { grid-template-columns: 1fr; }
-  .hero-social { flex-direction: column; }
-  .hero-social a + a { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.5); }
   .timeline-row {
     display: block;
     grid-template-columns: none;
