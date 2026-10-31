@@ -495,6 +495,19 @@ main section { padding-bottom: 64px; }
   text-align: left;
 }
 
+.expertise-grid .group-title {
+  grid-column: 1 / -1;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sand-line);
+  color: var(--primary-dark);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.expertise-grid .group-title:not(:first-child) { margin-top: 12px; }
+
 .expertise-grid .item h3 {
   font-size: 1rem;
   font-weight: 700;
